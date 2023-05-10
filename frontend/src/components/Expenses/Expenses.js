@@ -4,6 +4,7 @@ import Card from "../UI/Card";
 import AddExpense from "../NewExpense/AddExpense";
 import {useState} from "react";
 import ExpenseFilter from "./ExpenseFilter";
+import ExpenseChart from "./ExpenseChart";
 
 let expenseList = [
     {
@@ -53,6 +54,7 @@ function Expenses(){
             </Card>
             <Card className="expenses">
                 <ExpenseFilter onSelection={filterSelected} />
+                <ExpenseChart expenses={expenses} />
                 {expenses.map(expense => <ExpenseItem item={expense} key={expense.id} />)}
             </Card>
         </div>
